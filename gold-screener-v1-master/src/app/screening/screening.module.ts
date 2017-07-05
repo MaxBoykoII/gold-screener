@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 /* Redux imports */
 import { NgReduxModule, NgRedux } from 'ng2-redux';
@@ -13,7 +14,11 @@ import { ScopeComponent } from './criteria-tabs/scope/scope.component';
 import { MetricSelectionComponent } from './criteria-tabs/metric-selection/metric-selection.component';
 
 @NgModule({
-    imports: [ScreeningRoutingModule, NgReduxModule],
+    imports: [
+        CommonModule,
+        ScreeningRoutingModule,
+        NgReduxModule
+    ],
     declarations: [
         ScreeningShellComponent,
         CriteriaTabsComponent,
@@ -22,7 +27,7 @@ import { MetricSelectionComponent } from './criteria-tabs/metric-selection/metri
     ]
 })
 
-export class ScreeningModule { 
+export class ScreeningModule {
     constructor(private ngRedux: NgRedux<ScreenerState>) {
         ngRedux.provideStore(store);
     }

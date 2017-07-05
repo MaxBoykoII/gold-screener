@@ -21,7 +21,7 @@ var CriteriaTabsComponent = (function () {
 CriteriaTabsComponent = __decorate([
     core_1.Component({
         selector: 'criteria-tabs',
-        template: __webpack_require__(437),
+        template: __webpack_require__(438),
         styles: [__webpack_require__(496)]
     })
 ], CriteriaTabsComponent);
@@ -41,19 +41,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
+/* Redux imports */
+var ng2_redux_1 = __webpack_require__(223);
+var Observable_1 = __webpack_require__(0);
 var MetricSelectionComponent = (function () {
-    function MetricSelectionComponent() {
+    function MetricSelectionComponent(store) {
+        this.store = store;
+        this.metrics$ = this.metaDefinitions$;
     }
     return MetricSelectionComponent;
 }());
+__decorate([
+    ng2_redux_1.select('metaDefinitions'),
+    __metadata("design:type", Observable_1.Observable)
+], MetricSelectionComponent.prototype, "metaDefinitions$", void 0);
 MetricSelectionComponent = __decorate([
     core_1.Component({
         selector: 'metric-selection',
-        template: __webpack_require__(438),
+        template: __webpack_require__(439),
         styles: [__webpack_require__(497)]
-    })
+    }),
+    __metadata("design:paramtypes", [ng2_redux_1.NgRedux])
 ], MetricSelectionComponent);
 exports.MetricSelectionComponent = MetricSelectionComponent;
 
@@ -81,7 +94,7 @@ var ScopeComponent = (function () {
 ScopeComponent = __decorate([
     core_1.Component({
         selector: 'scope-tab',
-        template: __webpack_require__(439),
+        template: __webpack_require__(440),
         styles: [__webpack_require__(498)]
     })
 ], ScopeComponent);
@@ -111,7 +124,7 @@ var ScreeningShellComponent = (function () {
 ScreeningShellComponent = __decorate([
     core_1.Component({
         selector: 'screening-shell',
-        template: __webpack_require__(440),
+        template: __webpack_require__(441),
         styles: [__webpack_require__(499)]
     })
 ], ScreeningShellComponent);
@@ -124,7 +137,7 @@ exports.ScreeningShellComponent = ScreeningShellComponent;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__root_js__ = __webpack_require__(486);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__root_js__ = __webpack_require__(487);
 
 
 /** Built-in value references. */
@@ -139,9 +152,9 @@ var Symbol = __WEBPACK_IMPORTED_MODULE_0__root_js__["a" /* default */].Symbol;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseGetTag_js__ = __webpack_require__(480);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(482);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isObjectLike_js__ = __webpack_require__(487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseGetTag_js__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(483);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isObjectLike_js__ = __webpack_require__(488);
 
 
 
@@ -278,6 +291,23 @@ exports.DevToolsExtension = DevToolsExtension;
 /***/ }),
 
 /***/ 223:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var ng_redux_1 = __webpack_require__(96);
+exports.NgRedux = ng_redux_1.NgRedux;
+var dev_tools_1 = __webpack_require__(222);
+exports.DevToolsExtension = dev_tools_1.DevToolsExtension;
+var select_1 = __webpack_require__(489);
+exports.select = select_1.select;
+var ng_redux_module_1 = __webpack_require__(490);
+exports.NgReduxModule = ng_redux_module_1.NgReduxModule;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 224:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -317,7 +347,7 @@ function compose() {
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -577,17 +607,17 @@ var ActionTypes = {
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(503);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(502);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(227);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "bindActionCreators", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
@@ -615,7 +645,7 @@ if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' 
 
 /***/ }),
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -644,7 +674,7 @@ function warning(message) {
 
 /***/ }),
 
-/***/ 270:
+/***/ 271:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -657,10 +687,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
-var platform_browser_1 = __webpack_require__(72);
-var screening_module_1 = __webpack_require__(282);
-var app_routing_module_1 = __webpack_require__(279);
-var app_component_1 = __webpack_require__(280);
+var platform_browser_1 = __webpack_require__(73);
+var screening_module_1 = __webpack_require__(283);
+var app_routing_module_1 = __webpack_require__(280);
+var app_component_1 = __webpack_require__(281);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -684,7 +714,7 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 279:
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -717,7 +747,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 /***/ }),
 
-/***/ 280:
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -738,7 +768,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: __webpack_require__(436),
+        template: __webpack_require__(437),
         styles: [__webpack_require__(495)]
     })
 ], AppComponent);
@@ -747,7 +777,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 281:
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -795,7 +825,7 @@ exports.ScreeningRoutingModule = ScreeningRoutingModule;
 
 /***/ }),
 
-/***/ 282:
+/***/ 283:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -811,10 +841,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
+var common_1 = __webpack_require__(72);
 /* Redux imports */
-var ng2_redux_1 = __webpack_require__(489);
-var store_1 = __webpack_require__(283);
-var screening_routing_module_1 = __webpack_require__(281);
+var ng2_redux_1 = __webpack_require__(223);
+var store_1 = __webpack_require__(284);
+var screening_routing_module_1 = __webpack_require__(282);
 var screening_shell_component_1 = __webpack_require__(160);
 /* Tabs for definining search criteria */
 var criteria_tabs_component_1 = __webpack_require__(157);
@@ -829,7 +860,11 @@ var ScreeningModule = (function () {
 }());
 ScreeningModule = __decorate([
     core_1.NgModule({
-        imports: [screening_routing_module_1.ScreeningRoutingModule, ng2_redux_1.NgReduxModule],
+        imports: [
+            common_1.CommonModule,
+            screening_routing_module_1.ScreeningRoutingModule,
+            ng2_redux_1.NgReduxModule
+        ],
         declarations: [
             screening_shell_component_1.ScreeningShellComponent,
             criteria_tabs_component_1.CriteriaTabsComponent,
@@ -844,20 +879,20 @@ exports.ScreeningModule = ScreeningModule;
 
 /***/ }),
 
-/***/ 283:
+/***/ 284:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 /* store exports */
 Object.defineProperty(exports, "__esModule", { value: true });
-var store_1 = __webpack_require__(285);
+var store_1 = __webpack_require__(286);
 exports.store = store_1.store;
 
 
 /***/ }),
 
-/***/ 284:
+/***/ 285:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -870,17 +905,17 @@ exports.preloadedState = {
 
 /***/ }),
 
-/***/ 285:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 /* Redux imports */
 Object.defineProperty(exports, "__esModule", { value: true });
-var redux_1 = __webpack_require__(225);
+var redux_1 = __webpack_require__(226);
 var redux_logger_1 = __webpack_require__(500);
 /* Import preloaded state */
-var preloaded_state_1 = __webpack_require__(284);
+var preloaded_state_1 = __webpack_require__(285);
 /* Reducers */
 var combinedReducer = function (state, action) { return state; }; // placeholder
 exports.store = redux_1.createStore(combinedReducer, preloaded_state_1.preloadedState, redux_1.compose(redux_1.applyMiddleware(redux_logger_1.default)));
@@ -888,48 +923,48 @@ exports.store = redux_1.createStore(combinedReducer, preloaded_state_1.preloaded
 
 /***/ }),
 
-/***/ 436:
+/***/ 437:
 /***/ (function(module, exports) {
 
 module.exports = "<main>\n    <router-outlet></router-outlet>\n</main>\n";
 
 /***/ }),
 
-/***/ 437:
+/***/ 438:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"panel panel-primary\" id=\"criteria-panel\">\n    <div class=\"panel-heading\">\n        Define screening criteria\n    </div>\n    <div class=\"panel-body\">\n        <div class=\"wizard\">\n            <a [routerLink]=\"['scope']\" routerLinkActive=\"active\">Step 1: Scope</a>\n            <a [routerLink]=\"['metric-selection']\" routerLinkActive=\"active\">Step 2: Metrics</a>\n        </div>\n        <router-outlet></router-outlet>\n    </div>\n</div>";
 
 /***/ }),
 
-/***/ 438:
-/***/ (function(module, exports) {
-
-module.exports = "";
-
-/***/ }),
-
 /***/ 439:
 /***/ (function(module, exports) {
 
-module.exports = "<p>What companies should be included?</p>\n<p> What time period do you want to look at?</p>";
+module.exports = "<div id=\"metricSelection\">\r\n    <ul>\r\n        <li *ngFor=\"let metric of (metrics$ | async)\"></li>\r\n    </ul>\r\n</div>";
 
 /***/ }),
 
 /***/ 440:
 /***/ (function(module, exports) {
 
+module.exports = "<p>What companies should be included?</p>\n<p> What time period do you want to look at?</p>";
+
+/***/ }),
+
+/***/ 441:
+/***/ (function(module, exports) {
+
 module.exports = "<div id=\"screening-shell\">\n    <h1>Gold Screener</h1>\n    <p>Use fundamental metrics to sort and filter through gold producers, developers, and explorers. All companies are listed\n        on either the TSX or the TSXv.</p>\n    <!-- Tabs for configuring table -->\n    <router-outlet></router-outlet>\n</div>";
 
 /***/ }),
 
-/***/ 480:
+/***/ 481:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(483);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(484);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(485);
 
 
 
@@ -962,7 +997,7 @@ function baseGetTag(value) {
 
 /***/ }),
 
-/***/ 481:
+/***/ 482:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -975,11 +1010,11 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 /***/ }),
 
-/***/ 482:
+/***/ 483:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overArg_js__ = __webpack_require__(485);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overArg_js__ = __webpack_require__(486);
 
 
 /** Built-in value references. */
@@ -990,7 +1025,7 @@ var getPrototype = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__overArg_js
 
 /***/ }),
 
-/***/ 483:
+/***/ 484:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1045,7 +1080,7 @@ function getRawTag(value) {
 
 /***/ }),
 
-/***/ 484:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1075,7 +1110,7 @@ function objectToString(value) {
 
 /***/ }),
 
-/***/ 485:
+/***/ 486:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1098,11 +1133,11 @@ function overArg(func, transform) {
 
 /***/ }),
 
-/***/ 486:
+/***/ 487:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__ = __webpack_require__(481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__ = __webpack_require__(482);
 
 
 /** Detect free variable `self`. */
@@ -1116,7 +1151,7 @@ var root = __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__["a" /* default */] || fr
 
 /***/ }),
 
-/***/ 487:
+/***/ 488:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1153,7 +1188,7 @@ function isObjectLike(value) {
 
 /***/ }),
 
-/***/ 488:
+/***/ 489:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1193,23 +1228,6 @@ function select(selector, comparator) {
 }
 exports.select = select;
 //# sourceMappingURL=select.js.map
-
-/***/ }),
-
-/***/ 489:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var ng_redux_1 = __webpack_require__(96);
-exports.NgRedux = ng_redux_1.NgRedux;
-var dev_tools_1 = __webpack_require__(222);
-exports.DevToolsExtension = dev_tools_1.DevToolsExtension;
-var select_1 = __webpack_require__(488);
-exports.select = select_1.select;
-var ng_redux_module_1 = __webpack_require__(490);
-exports.NgReduxModule = ng_redux_module_1.NgReduxModule;
-//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -1396,7 +1414,7 @@ module.exports = ""
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(224);
 /* harmony export (immutable) */ __webpack_exports__["a"] = applyMiddleware;
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -1508,9 +1526,9 @@ function bindActionCreators(actionCreators, dispatch) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(224);
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(227);
 /* harmony export (immutable) */ __webpack_exports__["a"] = combineReducers;
 
 
@@ -1758,7 +1776,7 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_dynamic_1 = __webpack_require__(107);
 var core_1 = __webpack_require__(11);
-var app_module_1 = __webpack_require__(270);
+var app_module_1 = __webpack_require__(271);
 if (process.env.ENV === 'production') {
     core_1.enableProdMode();
 }
@@ -1773,14 +1791,14 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1
 
 "use strict";
 
-var redux_1 = __webpack_require__(225);
+var redux_1 = __webpack_require__(226);
 var Observable_1 = __webpack_require__(0);
 var BehaviorSubject_1 = __webpack_require__(98);
-__webpack_require__(232);
-__webpack_require__(231);
-__webpack_require__(229);
-__webpack_require__(230);
 __webpack_require__(233);
+__webpack_require__(232);
+__webpack_require__(230);
+__webpack_require__(231);
+__webpack_require__(234);
 var type_checks_1 = __webpack_require__(494);
 var omit_1 = __webpack_require__(493);
 var invariant_1 = __webpack_require__(492);
