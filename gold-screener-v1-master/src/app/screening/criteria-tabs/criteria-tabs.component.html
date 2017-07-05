@@ -1,0 +1,12 @@
+<div class="panel panel-primary" id="criteria-panel">
+    <div class="panel-heading">
+        Define screening criteria
+    </div>
+    <div class="panel-body">
+        <div class="wizard">
+            <a [routerLink]="['scope']" routerLinkActive="active">Step 1: Scope</a>
+            <a [routerLink]="['metric-selection']" routerLinkActive="active">Step 2: Metrics</a>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
