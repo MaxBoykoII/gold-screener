@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+/* Import Fetching Service */
+import { FetchingService } from './fetching';
 
 @Component({
     selector: 'screening-shell',
@@ -6,4 +9,10 @@ import { Component } from '@angular/core';
     styleUrls: ['./screening-shell.component.scss']
 })
 
-export class ScreeningShellComponent { }
+export class ScreeningShellComponent implements OnInit {
+    constructor(private fetcher: FetchingService) { }
+
+    ngOnInit(): void {
+        this.fetcher.getStocks().subscribe(data => console.log('stock data', data));
+    }
+}

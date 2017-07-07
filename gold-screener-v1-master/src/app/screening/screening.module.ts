@@ -8,6 +8,9 @@ import { store, ScreenerState } from './store';
 import { ScreeningRoutingModule } from './screening-routing.module';
 import { ScreeningShellComponent } from './screening-shell.component';
 
+/* Fetching Service for interacting with the API */
+import { FetchingService } from './fetching';
+
 /* Tabs for definining search criteria */
 import { CriteriaTabsComponent } from './criteria-tabs/criteria-tabs.component';
 import { ScopeComponent } from './criteria-tabs/scope/scope.component';
@@ -24,6 +27,9 @@ import { MetricSelectionComponent } from './criteria-tabs/metric-selection/metri
         CriteriaTabsComponent,
         ScopeComponent,
         MetricSelectionComponent
+    ],
+    providers: [
+        FetchingService
     ]
 })
 
