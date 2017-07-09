@@ -16,16 +16,20 @@ export class FetchingService {
 
     constructor(private http: Http) { }
 
-    getStocks(url = this.baseStocksUrl, ymd: string = this.defaultYmd, hp: number = this.defaultHp, extracter = this.extractData) {
+    getStocks$(url = this.baseStocksUrl, ymd: string = this.defaultYmd, hp: number = this.defaultHp, extract = this.extractData) {
         return this.http
             .get(`${url}m=${ymd}&hp=${hp}`)
-            .map(res => extracter(res));
+            .map(res => extract(res));
     }
 
-    getValidDates(url = this.baseDatesUrl, extracter = this.extractData) {
+    getValidDates$(url = this.baseDatesUrl, extract = this.extractData) {
         return this.http
             .get(`${url}`)
-            .map(res => extracter(res));
+            .map(res => extract(res));
+    }
+
+    getStocksWithDates$() {
+        return this.getStocks$().combineLatest(this.getValidDates$(), (stocks, dates) => ({stocks, dates}));
     }
 
     private extractData(res: Response, key = '_body', fallback = {}) {

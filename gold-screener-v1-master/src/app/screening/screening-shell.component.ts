@@ -13,7 +13,9 @@ export class ScreeningShellComponent implements OnInit {
     constructor(private fetcher: FetchingService) { }
 
     ngOnInit(): void {
-        this.fetcher.getStocks().subscribe(data => console.log('stock data', data));
-        this.fetcher.getValidDates().subscribe(data => console.log('valid dates', data));
+     this.fetcher.getStocksWithDates$().subscribe(({stocks, dates})=> {
+        console.log('stocks', stocks);
+        console.log('and here are the dates', dates);
+     })
     }
 }

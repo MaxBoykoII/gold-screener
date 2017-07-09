@@ -2487,8 +2487,11 @@ var ScreeningShellComponent = (function () {
         this.fetcher = fetcher;
     }
     ScreeningShellComponent.prototype.ngOnInit = function () {
-        this.fetcher.getStocks().subscribe(function (data) { return console.log('stock data', data); });
-        this.fetcher.getValidDates().subscribe(function (data) { return console.log('valid dates', data); });
+        this.fetcher.getStocksWithDates$().subscribe(function (_a) {
+            var stocks = _a.stocks, dates = _a.dates;
+            console.log('stocks', stocks);
+            console.log('and here are the dates', dates);
+        });
     };
     return ScreeningShellComponent;
 }());
@@ -5383,21 +5386,24 @@ var FetchingService = (function () {
         this.defaultYmd = "2015-10-13";
         this.defaultHp = 63;
     }
-    FetchingService.prototype.getStocks = function (url, ymd, hp, extracter) {
+    FetchingService.prototype.getStocks$ = function (url, ymd, hp, extract) {
         if (url === void 0) { url = this.baseStocksUrl; }
         if (ymd === void 0) { ymd = this.defaultYmd; }
         if (hp === void 0) { hp = this.defaultHp; }
-        if (extracter === void 0) { extracter = this.extractData; }
+        if (extract === void 0) { extract = this.extractData; }
         return this.http
             .get(url + "m=" + ymd + "&hp=" + hp)
-            .map(function (res) { return extracter(res); });
+            .map(function (res) { return extract(res); });
     };
-    FetchingService.prototype.getValidDates = function (url, extracter) {
+    FetchingService.prototype.getValidDates$ = function (url, extract) {
         if (url === void 0) { url = this.baseDatesUrl; }
-        if (extracter === void 0) { extracter = this.extractData; }
+        if (extract === void 0) { extract = this.extractData; }
         return this.http
             .get("" + url)
-            .map(function (res) { return extracter(res); });
+            .map(function (res) { return extract(res); });
+    };
+    FetchingService.prototype.getStocksWithDates$ = function () {
+        return this.getStocks$().combineLatest(this.getValidDates$(), function (stocks, dates) { return ({ stocks: stocks, dates: dates }); });
     };
     FetchingService.prototype.extractData = function (res, key, fallback) {
         if (key === void 0) { key = '_body'; }
