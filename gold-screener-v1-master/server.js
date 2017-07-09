@@ -4,7 +4,7 @@ var request = require('request');
 var app = express();
 
 /* GoldMinerPulse API urls*/
-var demo_base = 'https: //goldminerpulse.com/ngp/edp-api-v3a.php?';
+var demo_base = 'https://goldminerpulse.com/ngp/edp-api-v3a.php?';
 var valid_dates = 'https://goldminerpulse.com/ngp/valid-dates-api.php';
 
 /* API for configuring app */

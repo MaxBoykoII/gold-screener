@@ -14,5 +14,6 @@ export class ScreeningShellComponent implements OnInit {
 
     ngOnInit(): void {
         this.fetcher.getStocks().subscribe(data => console.log('stock data', data));
+        this.fetcher.getValidDates().subscribe(data => console.log('valid dates', data));
     }
 }
