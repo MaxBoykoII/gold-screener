@@ -1,0 +1,1 @@
+export { reducer as updateAllStocks } from './update-stocks.reducer';

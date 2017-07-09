@@ -8,7 +8,7 @@ export { ScreenerState } from './models';
 
 /* Action exports */
 
-export { INIT } from './actions';
+export { INIT, UPDATE_ALL_STOCKS } from './actions';
 
 /* Dispatcher export */
 

@@ -1,0 +1,1 @@
+export const UPDATE_ALL_STOCKS = `stocks/UPDATE_ALL_STOCKS`;

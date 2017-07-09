@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 /* Import Fetching Service */
 import { FetchingService } from './fetching';
 
+/* Import Dispatch Service */
+import { DispatchService } from './dispatcher';
+
 @Component({
     selector: 'screening-shell',
     templateUrl: './screening-shell.component.html',
@@ -10,12 +13,15 @@ import { FetchingService } from './fetching';
 })
 
 export class ScreeningShellComponent implements OnInit {
-    constructor(private fetcher: FetchingService) { }
+    constructor(private fetcher: FetchingService, private dispatcher: DispatchService) { }
 
     ngOnInit(): void {
-     this.fetcher.getStocksWithDates$().subscribe(({stocks, dates})=> {
-        console.log('stocks', stocks);
-        console.log('and here are the dates', dates);
-     })
+        /* Initialize app */
+        this.dispatcher.initialize();
+        
+        this.fetcher.getStocksWithDates$().subscribe(({ stocks, dates }) => {
+            console.log('stocks', stocks);
+            console.log('and here are the dates', dates);
+        })
     }
 }

@@ -1,1 +1,1 @@
-export const INIT = `initiation\INIT`; // action for initating app;
+export const INIT = `initiation/INIT`; // action for initating app;

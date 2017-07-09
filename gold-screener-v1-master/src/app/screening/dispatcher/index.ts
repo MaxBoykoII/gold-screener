@@ -1,1 +1,1 @@
-export { DispatcherService } from './dispatcher.service';
+export { DispatchService } from './dispatch.service';

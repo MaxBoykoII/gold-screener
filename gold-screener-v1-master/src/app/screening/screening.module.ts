@@ -12,7 +12,7 @@ import { ScreeningShellComponent } from './screening-shell.component';
 import { FetchingService } from './fetching';
 
 /* Dispatcher Service */
-import { DispatcherService } from './dispatcher';
+import { DispatchService } from './dispatcher';
 
 /* Tabs for definining search criteria */
 import { CriteriaTabsComponent } from './criteria-tabs/criteria-tabs.component';
@@ -33,7 +33,7 @@ import { MetricSelectionComponent } from './criteria-tabs/metric-selection/metri
     ],
     providers: [
         FetchingService,
-        DispatcherService
+        DispatchService
     ]
 })
 
