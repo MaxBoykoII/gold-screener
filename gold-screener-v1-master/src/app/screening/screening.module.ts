@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 /* Redux imports */
 import { NgReduxModule, NgRedux } from 'ng2-redux';
-import { store, ScreenerState } from './store';
+import { configureStore, ScreenerState } from './store';
 
 import { ScreeningRoutingModule } from './screening-routing.module';
 import { ScreeningShellComponent } from './screening-shell.component';
@@ -38,7 +38,10 @@ import { MetricSelectionComponent } from './criteria-tabs/metric-selection/metri
 })
 
 export class ScreeningModule {
-    constructor(private ngRedux: NgRedux<ScreenerState>) {
+    constructor(private ngRedux: NgRedux<ScreenerState>, private fetching: FetchingService) {
+        const dependencies = { getJSON: fetching.getStocksWithDates$.bind(fetching) };
+        const store = configureStore(dependencies);
+        
         ngRedux.provideStore(store);
     }
 }

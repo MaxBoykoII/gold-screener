@@ -18,10 +18,5 @@ export class ScreeningShellComponent implements OnInit {
     ngOnInit(): void {
         /* Initialize app */
         this.dispatcher.initialize();
-        
-        this.fetcher.getStocksWithDates$().subscribe(({ stocks, dates }) => {
-            console.log('stocks', stocks);
-            console.log('and here are the dates', dates);
-        })
     }
 }

@@ -1,6 +1,6 @@
 /* store exports */
 
-export { store } from './store';
+export { configureStore } from './store';
 
 /* Model exports */
 
